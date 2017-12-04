@@ -70,7 +70,33 @@ Use your function to decode the following message: 'craft block argon meter bell
 */
 
 function decode(word){
-  word = word.toLowerCase;
+  console.log("Incoming word", word);
+  word = word.toLowerCase();
+  console.log("toLowerCase", word);
+  let firstLetter = word.charAt(0);
+  if (firstLetter === 'a') {
+    console.log(word.charAt(2));
+  }
+  else if (firstLetter === 'b') {
+    console.log(word.charAt(3));
+  }
+  else if (firstLetter === 'c') {
+    console.log(word.charAt(4));
+  }
+  else if (firstLetter === 'd') {
+    console.log(word.charAt(5));
+  }
+  else {
+    console.log(" ");
+  }
+  }
+  decode("Chicken");
+
+/*
+function decode(word){
+  console.log("Incoming word", word);
+  word = word.toLowerCase();
+  console.log("toLowerCase", word);
   const wordArray = word.split(" ");
   for (i = 0; i < wordArray.length; i++) {
     let currentWord = wordArray[i];
@@ -93,3 +119,4 @@ function decode(word){
   }
 }
 decode("Chicken Soup");
+*/
