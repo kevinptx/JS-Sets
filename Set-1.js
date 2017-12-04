@@ -50,7 +50,7 @@ function whoAmI(name, age){
 
 whoAmI("Bill", 23);
 
-*/
+
 
 // #6 What happens if you enter a negative age? Add a try/catch
 
@@ -65,7 +65,7 @@ function whoAmI(name, age){
         if(age < 0) {
            throw new Error('Age negative error')
               }
-          } 
+          }
           catch(e){
           console.error(e.message);
           }
@@ -73,9 +73,60 @@ function whoAmI(name, age){
     console.log(`Hi my ${name} and I'm ${age}`);
     console.log(`I was born in ${yob}`);
 
-  
+
 }
 whoAmI("Bill", -23);
 
 
 
+// #7
+//Check if name and age have been entered. Create a conditional which outputs console.error("Arguments not valid").
+//Hint: How do you check if a parameter or variable has not been "defined"?
+
+function yearOfBirthCalc(age){
+    var yearOfBirth = 2017 - age;
+    return yearOfBirth;
+}
+function whoAmI(name, age){
+  try {
+    if(!name || !age) {
+      throw new Error('Argument not valid');
+    }
+  }
+          catch(e){
+          console.error(e.message);
+          }
+    var yob = yearOfBirthCalc(age);
+    console.log(`Hi my ${name} and I'm ${age}`);
+    console.log(`I was born in ${yob}`);
+
+}
+whoAmI();
+*/
+
+// #8
+//What happens if you pass "29" as the age? What about "twenty nine"? Implement a check to ensure the name is a string and the age is a number.
+//Hint: typeof age Investigate: What is NaN?
+
+function yearOfBirthCalc(age){
+    var yearOfBirth = 2017 - age;
+    return yearOfBirth;
+}
+function whoAmI(name, age){
+  try {
+    if(isNaN(age) || !age) {
+      throw new Error('Argument not valid');
+    }
+    if(typeof name !== 'string' || !name){
+      throw new Error('Name is invalid');
+    }
+  }
+          catch(e){
+          console.error(e.message);
+          }
+    var yob = yearOfBirthCalc(age);
+    console.log(`Hi my ${name} and I'm ${age}`);
+    console.log(`I was born in ${yob}`);
+
+}
+whoAmI(null, 29);
