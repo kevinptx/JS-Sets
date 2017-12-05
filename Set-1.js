@@ -2,7 +2,7 @@
 
 // #1 Write a statement which logs 'Hi, my name is Chris and I'm 29 years old' to the console (you can lie about your age).
 
-/*
+
 console.log("'Hi my name is Chris and I'm 29 years old'");
 
 // #2 Wrap the statement in a function called whoAmI and call that function
@@ -101,7 +101,7 @@ function whoAmI(name, age){
 
 }
 whoAmI();
-*/
+
 
 // #8
 //What happens if you pass "29" as the age? What about "twenty nine"? Implement a check to ensure the name is a string and the age is a number.
