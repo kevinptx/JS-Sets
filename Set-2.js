@@ -35,20 +35,23 @@ If num is zero it should log out 'Staying home'.
 
 function beyond(num){
 
-    if (num >= 1.7976931348623157E+10309){
+    if (!Number.isFinite(num)){
         console.log("And beyond");
     }
-    else if (num < 1.7976931348623157E+10309 && num > 0){
+    else if (num > 0){
         console.log("To infinity");
     }
-    else if (num > -1.7976931348623157E+10309 && num < 0){
+    else if (num < 0){
         console.log("To negavtive infinity")
     }
     else if (num === 0){
         console.log("Staying home");
     }
+    else{
+      console.log("That isn't a number - that is a", typeof num);
+    }
 }
-beyond(10);
+beyond([10, 40, 60, 80]);
 
 //#3
 /*Cracking the code
@@ -75,16 +78,16 @@ function decode(word){
   console.log("toLowerCase", word);
   let firstLetter = word.charAt(0);
   if (firstLetter === 'a') {
-    console.log(word.charAt(2));
+    console.log(word.charAt(1));
   }
   else if (firstLetter === 'b') {
-    console.log(word.charAt(3));
+    console.log(word.charAt(2));
   }
   else if (firstLetter === 'c') {
-    console.log(word.charAt(4));
+    console.log(word.charAt(3));
   }
   else if (firstLetter === 'd') {
-    console.log(word.charAt(5));
+    console.log(word.charAt(4));
   }
   else {
     console.log(" ");
@@ -120,3 +123,25 @@ function decode(word){
 }
 decode("Chicken Soup");
 */
+
+//#4
+/*
+How many days in a month
+Write a function that takes the name of a month as an argument and use a switch statement to determine how many days are there in that month. For example if the parameter to the function is January, the function should display "January has 31 days".
+*/
+
+function dayInMonth(month){
+  switch (month){
+    case "January":
+      console.log("January has 31 days.")
+      break;
+    case "February":
+      console.log("February has 28 days.")
+      break;
+  }
+}
+dayInMonth("February");
+
+//try to avoid dublication (deduplicate) as much as you can. have as little as possible inside switch and as much as you can outside of the switch. Outside the switch, you only have to write it once for 12 months.
+
+//try returning instead of console logging which is easier once put on the outside.
