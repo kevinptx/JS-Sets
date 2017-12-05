@@ -131,17 +131,115 @@ Write a function that takes the name of a month as an argument and use a switch 
 */
 
 function dayInMonth(month){
+  let monthNew = month.toLowerCase();
+  //do array of months and iterate through array for each, specifying how many days are in each.
+  for (i = 1; i > monthNew.length; i++) {
+    monthNew[i]
+  }
   switch (month){
-    case "January":
+    case "january":
       console.log("January has 31 days.")
       break;
-    case "February":
+    case "february":
       console.log("February has 28 days.")
+      break;
+      case "march":
+      console.log("March has 31 days");
+      break;
+
+      case "april":
+      console.log("April has 30 days");
+      break;
+
+      case "may":
+      console.log("May has 31 days");
+      break;
+
+      case "june":
+      console.log("June has 30 days");
+      break;
+
+      case "july":
+      console.log("July has 31 days");
+      break;
+
+      case "august":
+      console.log("August has 31 days");
+      break;
+
+      case "september":
+      console.log("September has 30 days");
+      break;
+
+      case "october":
+      console.log("October has 31 days");
+      break;
+
+      case "november":
+      console.log("November has 30 days");
+      break;
+
+      case "december":
+      console.log("December has 31 days");
+      break;
+
+      default:
+      console.log("ERROR");
       break;
   }
 }
 dayInMonth("February");
 
-//try to avoid dublication (deduplicate) as much as you can. have as little as possible inside switch and as much as you can outside of the switch. Outside the switch, you only have to write it once for 12 months.
+//try to avoid duplication (deduplicate) as much as you can. have as little as possible inside switch and as much as you can outside of the switch. Outside the switch, you only have to write it once for 12 months.
 
 //try returning instead of console logging which is easier once put on the outside.
+
+
+/* #5 Rock Paper Scissors
+In the game Rock Paper Scissors, two players simultaneously choose one of the three options: rock, paper,
+or scissors. If both player choose the same option, the result is a tie. Otherwise the winner is
+determined as follows:
+Rock beats scissors - a rock can break a pair of scissors
+Scissors beats paper, because scissors can cut paper
+Paper beats rock, because a piece of paper can cover a rock
+Create a game in which you are playing agaist the computer. The computer randomly chooses rock,
+paper, or scissors. Your function should take as an argument, 1, 2, or 3 to represent rock, paper,
+or scissors and determine the winner. The code for the computer to generate a random number between
+1 and 3 is -
+function RockPaperScissors(userChoice){
+    var computer = 1 + Math.floor((Math.random()*3));
+
+}
+RockPaperScissors(2);
+rock = 1
+paper = 2
+scissors = 3
+*/
+function RockPaperScissors(userChoice) {
+  var computer = 1 + Math.floor((Math.random()*3));
+  if (computer === 1 && userChoice === 2) {
+    console.log("Paper beats rock - a piece of paper can cover a rock");
+  }
+  else if (computer === 1 && userChoice === 3) {
+    console.log("Rock beats scissors - a rock can break a pair of scissors");
+  }
+  else if (computer === 2 && userChoice === 1) {
+    console.log("Paper beats rock - a piece of paper can cover a rock")
+  }
+  else if (computer === 2 && userChoice === 3) {
+    console.log("Scissors beat paper - scissors can cut paper");
+  }
+  else if (computer === 3 && userChoice === 1) {
+    console.log("Rock beats scissors - a rock can break a pair of scissors");
+  }
+  else if (computer === 3 && userChoice === 2) {
+    console.log("Scissor beats paper - scissors can cut paper");
+  }
+  else if (computer === userChoice) {
+    console.log("It's a tie!")
+  }
+}
+
+RockPaperScissors(2);
+RockPaperScissors(3);
+RockPaperScissors(1);

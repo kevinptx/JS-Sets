@@ -1,11 +1,11 @@
 /* eslint spaces 0 */
 
-// #1
+// #1 Write a statement which logs 'Hi, my name is Chris and I'm 29 years old' to the console (you can lie about your age).
 
 /*
 console.log("'Hi my name is Chris and I'm 29 years old'");
 
-// #2
+// #2 Wrap the statement in a function called whoAmI and call that function
 
 function whoAmI(){
 
@@ -15,7 +15,7 @@ function whoAmI(){
 
 whoAmI();
 
-// #3
+// #3 Change the hard coded string into a parameters, name and age
 
 function whoAmI(name, age){
 
@@ -24,7 +24,7 @@ function whoAmI(name, age){
 }
 whoAmI();
 
-// #4
+// #4 Create a variable named yearOfBirth and calculate the year based on age (ex 2016 - age). Then add another console.log statement that outputs I was born in [insert yearOfBirth].
 
 function whoAmI(name, age){
   var yearOfBirth = 2017 - age;
@@ -79,8 +79,7 @@ whoAmI("Bill", -23);
 
 
 
-// #7
-//Check if name and age have been entered. Create a conditional which outputs console.error("Arguments not valid").
+// #7 Check if name and age have been entered. Create a conditional which outputs console.error("Arguments not valid").
 //Hint: How do you check if a parameter or variable has not been "defined"?
 
 function yearOfBirthCalc(age){
