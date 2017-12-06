@@ -95,6 +95,7 @@ function decode(word){
   }
   let message = 'craft block argon meter bells brown croon droop';
   console.log(message.split(' ').map(w => decode(w)).join(''));
+
 /*
 function decode(word){
   console.log("Incoming word", word);
@@ -132,58 +133,31 @@ Write a function that takes the name of a month as an argument and use a switch 
 
 //if can put console log outside, you only need to figure out if it's 28, 30 or 31. You only need 3 pieces of code to accomplish this.
 function dayInMonth(month){
-  let monthNew = month.toLowerCase();
-  switch (month){
+  let numberOfDays;
+  switch (month.toLowerCase()){
     case "january":
-      console.log("January has 31 days.")
+    case "march":
+    case "may":
+    case "july":
+    case "august":
+    case "october":
+    case "december":
+    numberOfDays = 31;
       break;
     case "february":
-      console.log("February has 28 days.")
+    numberOfDays = 28;
       break;
-      case "march":
-      console.log("March has 31 days");
-      break;
-
       case "april":
-      console.log("April has 30 days");
-      break;
-
-      case "may":
-      console.log("May has 31 days");
-      break;
-
       case "june":
-      console.log("June has 30 days");
-      break;
-
-      case "july":
-      console.log("July has 31 days");
-      break;
-
-      case "august":
-      console.log("August has 31 days");
-      break;
-
       case "september":
-      console.log("September has 30 days");
-      break;
-
-      case "october":
-      console.log("October has 31 days");
-      break;
-
       case "november":
-      console.log("November has 30 days");
+      numberOfDays = 30;
       break;
-
-      case "december":
-      console.log("December has 31 days");
-      break;
-
       default:
       console.log("ERROR");
       break;
   }
+  console.log(`${month} has ${numberOfDays} days.` )
 }
 dayInMonth("February");
 
@@ -213,7 +187,7 @@ paper = 2
 scissors = 3
 */
 
-//think about modulo arithmetic again. recommend const ROCK = 1, const PAPER = 2, const SCISSORS = 3. Paper beats rock. Paper higher number than rock and paper beats rock, etc..comparing each one. handle wrap that you loop things and modulo arithmetic can help you here because it gives you looping effect. The higher number wins.
+//think about modulo arithmetic again. recommend const ROCK = 1, const PAPER = 2, const SCISSORS = 3. Paper beats rock. Paper higher number than rock and paper beats rock, etc..comparing each one. handle wrap that you loop things and modulo arithmetic can help you here because it gives you looping effect. The higher number wins. Problem of algorithm. Do the computation before the else if. The modulo arithmetic can be solved at the top.
 
 function RockPaperScissors(userChoice) {
   var computer = 1 + Math.floor((Math.random()*3));
