@@ -73,28 +73,28 @@ Use your function to decode the following message: 'craft block argon meter bell
 */
 
 function decode(word){
-  console.log("Incoming word", word);
   word = word.toLowerCase();
-  console.log("toLowerCase", word);
   let firstLetter = word.charAt(0);
+  let results;
   if (firstLetter === 'a') {
-    console.log(word.charAt(1));
+    results = word.charAt(1);
   }
   else if (firstLetter === 'b') {
-    console.log(word.charAt(2));
+    results = word.charAt(2);
   }
   else if (firstLetter === 'c') {
-    console.log(word.charAt(3));
+    results = word.charAt(3);
   }
   else if (firstLetter === 'd') {
-    console.log(word.charAt(4));
+    results = word.charAt(4);
   }
   else {
-    console.log(" ");
+    results = " ";
   }
+  return results;
   }
-  decode("Chicken");
-
+  let message = 'craft block argon meter bells brown croon droop';
+  console.log(message.split(' ').map(w => decode(w)).join(''));
 /*
 function decode(word){
   console.log("Incoming word", word);
@@ -130,12 +130,9 @@ How many days in a month
 Write a function that takes the name of a month as an argument and use a switch statement to determine how many days are there in that month. For example if the parameter to the function is January, the function should display "January has 31 days".
 */
 
+//if can put console log outside, you only need to figure out if it's 28, 30 or 31. You only need 3 pieces of code to accomplish this.
 function dayInMonth(month){
   let monthNew = month.toLowerCase();
-  //do array of months and iterate through array for each, specifying how many days are in each.
-  for (i = 1; i > monthNew.length; i++) {
-    monthNew[i]
-  }
   switch (month){
     case "january":
       console.log("January has 31 days.")
@@ -215,25 +212,28 @@ rock = 1
 paper = 2
 scissors = 3
 */
+
+//think about modulo arithmetic again. recommend const ROCK = 1, const PAPER = 2, const SCISSORS = 3. Paper beats rock. Paper higher number than rock and paper beats rock, etc..comparing each one. handle wrap that you loop things and modulo arithmetic can help you here because it gives you looping effect. The higher number wins.
+
 function RockPaperScissors(userChoice) {
   var computer = 1 + Math.floor((Math.random()*3));
   if (computer === 1 && userChoice === 2) {
-    console.log("Paper beats rock - a piece of paper can cover a rock");
+    console.log("Paper beats rock - a piece of paper can cover a rock. User Wins!");
   }
   else if (computer === 1 && userChoice === 3) {
-    console.log("Rock beats scissors - a rock can break a pair of scissors");
+    console.log("Rock beats scissors - a rock can break a pair of scissors. Computer Wins!");
   }
   else if (computer === 2 && userChoice === 1) {
-    console.log("Paper beats rock - a piece of paper can cover a rock")
+    console.log("Paper beats rock - a piece of paper can cover a rock. Computer Wins!")
   }
   else if (computer === 2 && userChoice === 3) {
-    console.log("Scissors beat paper - scissors can cut paper");
+    console.log("Scissors beat paper - scissors can cut paper. User Wins!");
   }
   else if (computer === 3 && userChoice === 1) {
-    console.log("Rock beats scissors - a rock can break a pair of scissors");
+    console.log("Rock beats scissors - a rock can break a pair of scissors. User Wins!");
   }
   else if (computer === 3 && userChoice === 2) {
-    console.log("Scissor beats paper - scissors can cut paper");
+    console.log("Scissor beats paper - scissors can cut paper. Computer Wins!");
   }
   else if (computer === userChoice) {
     console.log("It's a tie!")
