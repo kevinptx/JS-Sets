@@ -12,11 +12,11 @@ For example, jediName('Beyonce', 'Knowles') should return 'KnoBe'.
 
 */
 
-function jediName(firstName, lastName){
+function jediName(firstName, lastName) {
 
-    firstName = firstName.slice(0,3);
-    lastName = lastName.slice(0,2);
-    return firstName + lastName;
+  firstName = firstName.slice(0, 3);
+  lastName = lastName.slice(0, 2);
+  return firstName + lastName;
 }
 
 jediName("Kevin", "Peery");
@@ -33,23 +33,19 @@ If num is zero it should log out 'Staying home'.
 
 */
 
-function beyond(num){
+function beyond(num) {
 
-    if (!Number.isFinite(num)){
-        console.log("And beyond");
-    }
-    else if (num > 0){
-        console.log("To infinity");
-    }
-    else if (num < 0){
-        console.log("To negavtive infinity")
-    }
-    else if (num === 0){
-        console.log("Staying home");
-    }
-    else{
-      console.log("That isn't a number - that is a", typeof num);
-    }
+  if (!Number.isFinite(num)) {
+    console.log("And beyond");
+  } else if (num > 0) {
+    console.log("To infinity");
+  } else if (num < 0) {
+    console.log("To negavtive infinity")
+  } else if (num === 0) {
+    console.log("Staying home");
+  } else {
+    console.log("That isn't a number - that is a", typeof num);
+  }
 }
 beyond([10, 40, 60, 80]);
 
@@ -72,29 +68,25 @@ Write a function called decode which takes an encoded word as an argument, and r
 Use your function to decode the following message: 'craft block argon meter bells brown croon droop'.
 */
 
-function decode(word){
+function decode(word) {
   word = word.toLowerCase();
   let firstLetter = word.charAt(0);
   let results;
   if (firstLetter === 'a') {
     results = word.charAt(1);
-  }
-  else if (firstLetter === 'b') {
+  } else if (firstLetter === 'b') {
     results = word.charAt(2);
-  }
-  else if (firstLetter === 'c') {
+  } else if (firstLetter === 'c') {
     results = word.charAt(3);
-  }
-  else if (firstLetter === 'd') {
+  } else if (firstLetter === 'd') {
     results = word.charAt(4);
-  }
-  else {
+  } else {
     results = " ";
   }
   return results;
-  }
-  let message = 'craft block argon meter bells brown croon droop';
-  console.log(message.split(' ').map(w => decode(w)).join(''));
+}
+let message = 'craft block argon meter bells brown croon droop';
+console.log(message.split(' ').map(w => decode(w)).join(''));
 
 /*
 function decode(word){
@@ -132,9 +124,9 @@ Write a function that takes the name of a month as an argument and use a switch 
 */
 
 //if can put console log outside, you only need to figure out if it's 28, 30 or 31. You only need 3 pieces of code to accomplish this.
-function dayInMonth(month){
+function dayInMonth(month) {
   let numberOfDays;
-  switch (month.toLowerCase()){
+  switch (month.toLowerCase()) {
     case "january":
     case "march":
     case "may":
@@ -142,29 +134,24 @@ function dayInMonth(month){
     case "august":
     case "october":
     case "december":
-    numberOfDays = 31;
+      numberOfDays = 31;
       break;
     case "february":
-    numberOfDays = 28;
+      numberOfDays = 28;
       break;
-      case "april":
-      case "june":
-      case "september":
-      case "november":
+    case "april":
+    case "june":
+    case "september":
+    case "november":
       numberOfDays = 30;
       break;
-      default:
+    default:
       console.log("ERROR");
       break;
   }
-  console.log(`${month} has ${numberOfDays} days.` )
+  return`${month} has ${numberOfDays} days.`;
 }
-dayInMonth("February");
-
-//try to avoid duplication (deduplicate) as much as you can. have as little as possible inside switch and as much as you can outside of the switch. Outside the switch, you only have to write it once for 12 months.
-
-//try returning instead of console logging which is easier once put on the outside.
-
+console.log(dayInMonth("March"));
 
 /* #5 Rock Paper Scissors
 In the game Rock Paper Scissors, two players simultaneously choose one of the three options: rock, paper,
@@ -190,26 +177,20 @@ scissors = 3
 //think about modulo arithmetic again. recommend const ROCK = 1, const PAPER = 2, const SCISSORS = 3. Paper beats rock. Paper higher number than rock and paper beats rock, etc..comparing each one. handle wrap that you loop things and modulo arithmetic can help you here because it gives you looping effect. The higher number wins. Problem of algorithm. Do the computation before the else if. The modulo arithmetic can be solved at the top.
 
 function RockPaperScissors(userChoice) {
-  var computer = 1 + Math.floor((Math.random()*3));
+  var computer = 1 + Math.floor((Math.random() * 3));
   if (computer === 1 && userChoice === 2) {
     console.log("Paper beats rock - a piece of paper can cover a rock. User Wins!");
-  }
-  else if (computer === 1 && userChoice === 3) {
+  } else if (computer === 1 && userChoice === 3) {
     console.log("Rock beats scissors - a rock can break a pair of scissors. Computer Wins!");
-  }
-  else if (computer === 2 && userChoice === 1) {
+  } else if (computer === 2 && userChoice === 1) {
     console.log("Paper beats rock - a piece of paper can cover a rock. Computer Wins!")
-  }
-  else if (computer === 2 && userChoice === 3) {
+  } else if (computer === 2 && userChoice === 3) {
     console.log("Scissors beat paper - scissors can cut paper. User Wins!");
-  }
-  else if (computer === 3 && userChoice === 1) {
+  } else if (computer === 3 && userChoice === 1) {
     console.log("Rock beats scissors - a rock can break a pair of scissors. User Wins!");
-  }
-  else if (computer === 3 && userChoice === 2) {
+  } else if (computer === 3 && userChoice === 2) {
     console.log("Scissor beats paper - scissors can cut paper. Computer Wins!");
-  }
-  else if (computer === userChoice) {
+  } else if (computer === userChoice) {
     console.log("It's a tie!")
   }
 }
